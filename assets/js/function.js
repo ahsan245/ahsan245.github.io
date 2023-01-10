@@ -38,15 +38,15 @@ function LoadAllComplain(Complaindata, Techniciandata) {
         html += '<td>';
         html += '<div class="d-flex px-2 py-1">';
         html += '<div>';
-        if(v.complainImage == '' || v.complainImage == null){
-            html += '<img src="assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">'; 
+        if (v.complainImage == '' || v.complainImage == null) {
+            html += '<img src="assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">';
 
-            }
-            else{
-                html += '<img src="http://127.0.0.1:4000'+v.complainImage+'" class="avatar avatar-sm me-3" alt="user1">'; // baseUrl + v.complainImage
+        }
+        else {
+            html += '<img src="http://127.0.0.1:4000' + v.complainImage + '" class="avatar avatar-sm me-3" alt="user1">'; // baseUrl + v.complainImage
 
-            }
-        
+        }
+
         html += '</div>';
         html += '<div class="d-flex flex-column justify-content-center">';
         html += '<h6 class="mb-0 text-sm">' + v.user.fullName + '</h6>';
@@ -73,20 +73,36 @@ function LoadAllComplain(Complaindata, Techniciandata) {
         html += '<span class="text-xs font-weight-bold mb-0">' + v.complainDescription + '</span>';
         html += '</td>';
         html += '<td class="align-middle text-center text-sm">';
-        if(v.complainStatus == true)
-        {
-        html += '<span class="badge badge-sm bg-gradient-success">Actice</span>';
+        if (v.complainStatus == true) {
+            html += '<span class="badge badge-sm bg-gradient-success">Actice</span>';
         }
-        if(v.complainStatus == false)
-        {
-        html += '<span class="badge badge-sm bg-gradient-warning">InActive</span>';
+        if (v.complainStatus == false) {
+            html += '<span class="badge badge-sm bg-gradient-warning">InActive</span>';
 
         }
 
         html += '</td>';
         html += '<td id="technician">';
         if (v.assignedTech != '' && v.assignedTech != null) {
-            html += '<span class="badge badge-sm bg-gradient-faded-info">' + v.assignedTech.techName + '</span>';
+           
+
+            html += '<span class="badge badge-sm bg-gradient-faded-info" id="span-' + k + '">' + v.assignedTech.techName + '</span>';
+
+            html += '<a href="#" id="edit-' + k + '" class="text-secondary font-weight-bold text-xs ml-2 d-inline-block" onclick="displayEdit(\'allTechnicians-' + k + '\',\'span-' + k + '\',\'edit-' + k + '\')">Edit</a>';
+
+            html += '<select id="allTechnicians-' + k + '" class="form-control d-none">';
+            $.each(Techniciandata, function (x, y) {
+                html += '<option value="' + y.techId + '">' + y.techName + '</option>';
+            });
+            html += '</select>';
+            html += '<td class="align-middle d-none" id="assign-td-' + k + '">';
+            html += '<a href="javascript:UpdateComplain(\'' + v.complainId + '\',' + k + ')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Assign Technician">';
+            html += 'Assign';
+            html += '</a>';
+            html += '</td>';
+
+
+
         }
         else {
             html += '<select id="allTechnicians-' + k + '" class="form-control">';
@@ -103,8 +119,8 @@ function LoadAllComplain(Complaindata, Techniciandata) {
             html += '</a>';
             html += '</td>';
         }
-     
-        
+
+
 
 
 
@@ -116,11 +132,9 @@ function LoadAllComplain(Complaindata, Techniciandata) {
 }
 
 function UpdateComplain(complainId, count) {
-    debugger;
     var id = document.getElementById("allTechnicians-" + count);
     var technicianId = id.options[id.selectedIndex].value;
     complain = complainId;
-    console.log(technicianId);
 
     let formData = new FormData;
     formData.append('assignedTech', technicianId);
@@ -137,4 +151,15 @@ function UpdateComplain(complainId, count) {
             }
         }
     });
+}
+
+function displayEdit(selectId, spanId, editId) {
+    var select = document.getElementById(selectId);
+    select.classList.remove("d-none");
+    var td = document.getElementById("assign-td-" + selectId.split("-")[1]);
+    td.classList.remove("d-none");
+    var span = document.getElementById(spanId);
+    span.classList.add("d-none");
+    var editButton = document.getElementById(editId);
+    editButton.classList.add("d-none");
 }
