@@ -1,5 +1,5 @@
 // Project Base URL
-let baseUrl = "127.0.0.1:4000/";
+let baseUrl = "https://theek-karo-api.herokuapp.com/";
 var complain = "";
 $(document).ready(function () {
     LoadTechnicians();
@@ -8,7 +8,7 @@ $(document).ready(function () {
 function LoadTechnicians() {
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:4000/api/tech",
+        url: "https://theek-karo-api.herokuapp.com/api/tech",
         success: function (data) {
             if (data.message == "Success") {
                 LoadAllTech(data.data);
@@ -32,7 +32,7 @@ function LoadAllTech(Techniciandata) {
 
         }
         else{
-        html += '<img src="http://127.0.0.1:4000'+v.techImage+'" class="avatar avatar-sm me-3" alt="user1">'; // baseUrl + v.complainImage
+        html += '<img src="https://theek-karo-api.herokuapp.com'+v.techImage+'" class="avatar avatar-sm me-3" alt="user1">'; // baseUrl + v.complainImage
         }
         html += '</div>';
         html += '<div class="d-flex flex-column justify-content-center">';
@@ -42,7 +42,7 @@ function LoadAllTech(Techniciandata) {
         html += '</div>';
         html += '</td>';
         html += '<td>';
-        html += '<p class="text-xs font-weight-bold mb-0">'+'<img src="http://127.0.0.1:4000'+v.category.categoryImage+'" class="avatar avatar-sm me-3" alt="user1"></p>';
+        html += '<p class="text-xs font-weight-bold mb-0">'+'<img src="https://theek-karo-api.herokuapp.com'+v.category.categoryImage+'" class="avatar avatar-sm me-3" alt="user1"></p>';
         html += '<p class="text-xs text-secondary mb-0">' + v.category.categoryId + '</p>';
         html += '</td>';
         html += '<td>';

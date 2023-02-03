@@ -1,5 +1,5 @@
 // Project Base URL
-let baseUrl = "127.0.0.1:4000/";
+let baseUrl = "https://theek-karo-api.herokuapp.com/";
 var complain = "";
 $(document).ready(function () {
     LoadTechnicians();
@@ -8,7 +8,7 @@ $(document).ready(function () {
 function LoadTechnicians() {
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:4000/api/tech",
+        url: "https://theek-karo-api.herokuapp.com/api/tech",
         success: function (data) {
             if (data.message == "Success") {
                 LoadComplains(data.data);
@@ -22,7 +22,7 @@ function LoadTechnicians() {
 function LoadComplains(TechData) {
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:4000/api/complain",
+        url: "https://theek-karo-api.herokuapp.com/api/complain",
         success: function (data) {
             if (data.messege == "Success") {
                 LoadAllComplain(data.data, TechData);
@@ -43,7 +43,7 @@ function LoadAllComplain(Complaindata, Techniciandata) {
 
         }
         else {
-            html += '<img src="http://127.0.0.1:4000' + v.complainImage + '" class="avatar avatar-sm me-3" alt="user1">'; // baseUrl + v.complainImage
+            html += '<img src="https://theek-karo-api.herokuapp.com' + v.complainImage + '" class="avatar avatar-sm me-3" alt="user1">'; // baseUrl + v.complainImage
 
         }
 
