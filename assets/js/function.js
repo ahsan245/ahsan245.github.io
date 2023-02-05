@@ -141,7 +141,7 @@ function UpdateComplain(complainId, count) {
 
     $.ajax({
         type: "PUT",
-        url: "http://127.0.0.1:4000/api/complain/" + complain,
+        url: "https://theek-karo-api.herokuapp.com/api/complain/" + complain,
         data: formData,
         contentType: false,
         processData: false,
