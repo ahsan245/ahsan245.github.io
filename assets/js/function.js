@@ -50,13 +50,13 @@ function LoadAllComplain(Complaindata, Techniciandata) {
         html += '</div>';
         html += '<div class="d-flex flex-column justify-content-center">';
         html += '<h6 class="mb-0 text-sm">' + v.user.fullName + '</h6>';
-        html += '<p class="text-xs text-secondary mb-0">' + v.user.userId + '</p>';
+        html += '<p class="text-xs text-secondary mb-0">' + v.user.email + '</p>';
         html += '</div>';
         html += '</div>';
         html += '</td>';
         html += '<td>';
         html += '<p class="text-xs font-weight-bold mb-0">' + v.userAddress + '</p>';
-        html += '<p class="text-xs font-weight-bold mb-0">' + v.complainName + '</p>';
+        html += '<p class="text-xs font-weight-bold mb-0">Conact</p>';
         if (v.user.contact == "" || v.user.contact == null) {
             html += '<p class="text-xs text-secondary mb-0"></p>';
 
@@ -72,9 +72,9 @@ function LoadAllComplain(Complaindata, Techniciandata) {
 
         }
         else {
-            html += '<p class="text-xs text-secondary mb-0">' + v.complainCategory + '</p>';
+            html += '<p class="text-xs text-secondary mb-0">Category:'+ v.complainCategory +'</p>';
         }
-        html += '<p class="text-xs text-secondary mb-0">' + v.complainId + '</p>';
+        html += '<p class="text-xs text-secondary mb-0">'+ v.complainCategory + '</p>';
         html += '</td>';
         html += '<td class="align-middle text-center text-sm">';
         html += '<span class="text-xs font-weight-bold mb-0">' + v.complainDescription + '</span>';
