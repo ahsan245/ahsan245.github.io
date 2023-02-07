@@ -56,7 +56,7 @@ function LoadAllComplain(Complaindata, Techniciandata) {
         html += '</td>';
         html += '<td>';
         html += '<p class="text-xs font-weight-bold mb-0">' + v.userAddress + '</p>';
-        html += '<p class="text-xs font-weight-bold mb-0">Conact</p>';
+        html += '<p class="text-xs font-weight-bold mb-0">Contact</p>';
         if (v.user.contact == "" || v.user.contact == null) {
             html += '<p class="text-xs text-secondary mb-0"></p>';
 
@@ -72,7 +72,8 @@ function LoadAllComplain(Complaindata, Techniciandata) {
 
         }
         else {
-            html += '<p class="text-xs text-secondary mb-0">Category:'+ v.complainCategory +'</p>';
+            html += '<p class="text-xs font-weight-bold mb-0">Complain Category</p>';
+
         }
         html += '<p class="text-xs text-secondary mb-0">'+ v.complainCategory + '</p>';
         html += '</td>';
