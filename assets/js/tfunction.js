@@ -42,7 +42,7 @@ function LoadAllTech(Techniciandata) {
         html += '</div>';
         html += '</td>';
         html += '<td>';
-        html += '<p class="text-xs font-weight-bold mb-0">'+'<img src="https://theek-karo-api.herokuapp.com'+v.category.categoryImage+'" class="avatar avatar-sm me-3" alt="user1"></p>';
+        // html += '<p class="text-xs font-weight-bold mb-0">'+'<img src="https://theek-karo-api.herokuapp.com'+v.category.categoryImage+'" class="avatar avatar-sm me-3" alt="user1"></p>';
         html += '<p class="text-xs text-secondary mb-0">' + v.category.categoryId + '</p>';
         html += '</td>';
         html += '<td>';
