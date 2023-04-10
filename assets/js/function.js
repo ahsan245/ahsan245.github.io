@@ -32,6 +32,7 @@ function LoadComplains(TechData) {
 }
 
 function LoadAllComplain(Complaindata, Techniciandata) {
+    debugger;
     $("#allComplains tr").remove();
     $.each(Complaindata, function (k, v) {
         var html = '<tr>';
@@ -61,8 +62,8 @@ function LoadAllComplain(Complaindata, Techniciandata) {
             html += '<p class="text-xs text-secondary mb-0"></p>';
 
         }
-        else{
-        html += '<p class="text-xs text-secondary mb-0">' + v.user.contact + '</p>';
+        else {
+            html += '<p class="text-xs text-secondary mb-0">' + v.user.contact + '</p>';
         }
         html += '</td>';
         html += '<td>';
@@ -75,7 +76,7 @@ function LoadAllComplain(Complaindata, Techniciandata) {
             html += '<p class="text-xs font-weight-bold mb-0">Complain Category</p>';
 
         }
-        html += '<p class="text-xs text-secondary mb-0">'+ v.complainCategory + '</p>';
+        html += '<p class="text-xs text-secondary mb-0">' + v.complainCategory + '</p>';
         html += '</td>';
         html += '<td class="align-middle text-center text-sm">';
         html += '<span class="text-xs font-weight-bold mb-0">' + v.complainDescription + '</span>';
@@ -92,7 +93,7 @@ function LoadAllComplain(Complaindata, Techniciandata) {
         html += '</td>';
         html += '<td id="technician">';
         if (v.assignedTech != '' && v.assignedTech != null) {
-           
+
 
             html += '<span class="badge badge-sm bg-gradient-faded-info" id="span-' + k + '">' + v.assignedTech.techName + '</span>';
 
