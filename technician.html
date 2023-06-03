@@ -294,30 +294,82 @@
 
                   </tbody>
                 </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary mt-4" id="addNewTechnicianBtn">Add New
+                    Technician</button>
+                </div>
 
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="#" class="font-weight-bold" target="_blank">Theek Karo</a>
-                Team for their Final Year Project at PAF-KIET.
+                <div class="modal fade" id="addTechnicianModal" tabindex="-1" role="dialog"
+                  aria-labelledby="addTechnicianModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="addTechnicianModalLabel">Add New Technician</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form id="addTechnicianForm">
+                          <div class="form-group">
+                            <label for="technicianName">Name</label>
+                            <input type="text" class="form-control" id="technicianName" placeholder="Enter name">
+                          </div>
+                          <div class="form-group">
+                            <label for="categoryIdInput">Category ID</label>
+                            <input type="text" class="form-control" id="categoryIdInput"
+                              placeholder="Enter category ID">
+                          </div>
+                          <div class="form-group">
+                            <label for="techSalePrice">Sale Price</label>
+                            <input type="text" class="form-control" id="techSalePrice" placeholder="Enter sale price">
+                          </div>
+                          <div class="form-group">
+                            <label for="techPrice">Price</label>
+                            <input type="text" class="form-control" id="techPrice" placeholder="Enter price">
+                          </div>
+                          <div class="form-group">
+                            <label for="techShortDescription">Short Description</label>
+                            <input type="text" class="form-control" id="techShortDescription"
+                              placeholder="Enter short description">
+                          </div>
+                          <div class="form-group">
+                            <label for="techStatus">Status</label>
+                            <select class="form-control" id="techStatus">
+                              <option value="true">Active</option>
+                              <option value="false">Inactive</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="addTechnicianBtn">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <footer class="footer pt-3  ">
+                  <div class="container-fluid">
+                    <div class="row align-items-center justify-content-lg-between">
+                      <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-start">
+                          ©
+                          <script>
+                            document.write(new Date().getFullYear())
+                          </script>,
+                          made with <i class="fa fa-heart"></i> by
+                          <a href="#" class="font-weight-bold" target="_blank">Theek Karo</a>
+                          Team for their Final Year Project at PAF-KIET.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </footer>
               </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
 
 
   </main>
