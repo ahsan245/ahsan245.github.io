@@ -113,6 +113,7 @@ function LoadAllComplain(Complaindata) {
 
         html += '</td>';
         html += '<td class="align-middle text-center text-sm">';
+
         if (v.paymentStatus == true) {
             html += '<span class="badge badge-sm bg-gradient-success">Paid</span>';
         }
