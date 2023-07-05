@@ -112,6 +112,16 @@ function LoadAllComplain(Complaindata) {
         html += '<span class="badge badge-sm bg-gradient-info">' + v.techComment + '</span>';
 
         html += '</td>';
+        html += '<td class="align-middle text-center text-sm">';
+        if (v.paymentStatus == true) {
+            html += '<span class="badge badge-sm bg-gradient-success">Paid</span>';
+        }
+        if (v.paymentStatus == false) {
+            html += '<span class="badge badge-sm bg-gradient-warning">UnPaid</span>';
+
+        }
+
+        html += '</td>';
 
         html += '</td>';
         html += '</tr>';
